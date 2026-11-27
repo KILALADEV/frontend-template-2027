@@ -1,0 +1,6 @@
+# autoprefixer / vite の対象ブラウザ。案件の要件に合わせて調整する。
+# 現在の対象一覧は `npx browserslist` で確認できる。
+defaults
+not dead
+iOS >= 15
+Safari >= 15

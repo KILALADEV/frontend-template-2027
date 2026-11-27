@@ -1,0 +1,11 @@
+module.exports = {
+  presets: [
+    [
+      '@babel/preset-typescript',
+      {
+        ignoreExtensions: true,
+      },
+    ],
+  ],
+  plugins: ['@babel/plugin-syntax-jsx'],
+};

@@ -1,0 +1,8 @@
+node_modules
+dist
+package-lock.json
+.astro
+node_module
+test-results
+playwright-report
+pnpm-lock.yaml

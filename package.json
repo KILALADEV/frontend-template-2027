@@ -1,0 +1,62 @@
+{
+  "name": "Template",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "LP Production Template (Astro + TypeScript + SCSS + Playwright)",
+  "engines": {
+    "node": ">=24.22.3",
+    "pnpm": ">=10.0.0"
+  },
+  "packageManager": "pnpm@10.22.0",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "typecheck": "astro sync && tsc --noEmit",
+    "lint:js": "biome check src",
+    "lint:css": "stylelint \"src/**/*.{css,scss}\" --allow-empty-input",
+    "lint:a11y": "eslint \"src/**/*.astro\"",
+    "lint": "pnpm lint:js && pnpm lint:css && pnpm lint:a11y",
+    "fix": "pnpm fix:js && pnpm fix:css && pnpm format",
+    "fix:js": "biome check --write src",
+    "fix:css": "stylelint \"src/**/*.{css,scss}\" --fix --allow-empty-input",
+    "format": "prettier --write \"src/**/*.{css,scss,astro}\"",
+    "format:check": "prettier --check \"src/**/*.{css,scss,astro}\"",
+    "test:a11y": "playwright test e2e/a11y.spec.ts",
+    "test:seo": "playwright test e2e/seo.spec.ts",
+    "test:audit": "astro build && playwright test",
+    "check": "playwright install && pnpm typecheck && pnpm lint && pnpm format:check && pnpm test:audit",
+    "setup:extensions": "node -e \"const fs=require('fs'); const raw=fs.readFileSync('.vscode/extensions.json','utf8').replace(/\\/\\/.*$/gm,''); const {recommendations=[]}=JSON.parse(raw); recommendations.forEach(ext=>require('child_process').execSync('code --install-extension '+ext,{stdio:'inherit'}))\""
+  },
+  "dependencies": {
+    "@astrojs/react": "^7.1.8",
+    "astro": "^7.4.11",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@babel/eslint-parser": "^8.1.2",
+    "@babel/plugin-syntax-jsx": "^8.0.1",
+    "@babel/preset-typescript": "^8.0.7",
+    "@biomejs/biome": "2.6.6",
+    "@eslint/js": "10.0.0",
+    "@playwright/test": "^1.65.0",
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "astro-eslint-parser": "1.4.0",
+    "eslint": "^10.0.0",
+    "eslint-plugin-astro": "1.7.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "postcss-scss": "^4.0.9",
+    "prettier": "^3.10.1",
+    "prettier-plugin-astro": "^0.14.1",
+    "sass-embedded": "^1.108.2",
+    "stylelint": "^17.16.0",
+    "stylelint-config-recess-order": "^7.10.0",
+    "stylelint-config-standard-scss": "^17.0.0",
+    "typescript": "^7.0.2"
+  }
+}

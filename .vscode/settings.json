@@ -1,0 +1,117 @@
+{
+  // --- Editor Core & Indentation ---
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.unicodeHighlight.nonBasicASCII": true,
+  "files.trimTrailingWhitespace": true,
+
+  // Ép TypeScript & JavaScript luôn dùng nháy kép "" khi hoàn thành JSX/HTML
+  "javascript.preferences.jsxAttributeCompletionStyle": "auto",
+  "typescript.preferences.jsxAttributeCompletionStyle": "auto",
+
+  // Ép Language Server của Astro chèn dấu =""
+  "astro.language-server.ls-path": "",
+  "html.autoClosingQuotes": "always",
+  "html.suggest.html5": true,
+
+  // --- Emmet (Expand HTML snippets directly in .astro) ---
+  "emmet.includeLanguages": {
+    "astro": "html"
+  },
+  "emmet.syntaxProfiles": {
+    "astro": "html"
+  },
+  "emmet.triggerExpansionOnTab": true,
+
+  // --- Hover, Lightbulb & Code Actions ---
+  "editor.lightbulb.enabled": "on",
+  "editor.hover.enabled": "on",
+  "editor.hover.delay": 300,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.biome": "explicit",
+    "source.organizeImports.biome": "explicit",
+    "source.fixAll.stylelint": "explicit"
+  },
+
+  // --- ESLint Configuration (Flat Config v10) ---
+  "eslint.enable": true,
+  "eslint.useFlatConfig": true,
+  "eslint.runtime": "node",
+  "eslint.run": "onSave",
+  "eslint.workingDirectories": [{ "mode": "auto" }],
+  "eslint.codeAction.showDocumentation": {
+    "enable": true
+  },
+  "eslint.probe": ["astro"],
+  "eslint.validate": ["astro"],
+  "files.associations": {
+    "*.astro": "astro"
+  },
+
+  // --- ErrorLens (Disable inline red text clutter) ---
+  "errorLens.enabled": false,
+
+  // --- Per-Language Configurations & Formatter Mapping ---
+  "[astro]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": true
+    },
+    "editor.snippetSuggestions": "top",
+    "editor.suggest.insertMode": "replace"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
+  },
+  "[html]": {
+    "editor.formatOnSave": false
+  },
+
+  // --- Stylelint & CSS Validations ---
+  "stylelint.validate": ["css", "scss"],
+  "scss.validate": false,
+  "css.validate": false,
+
+  // --- Biome Engine ---
+  "biome.enabled": true,
+
+  // --- CSpell Custom Vocabulary ---
+  "cSpell.words": [
+    "activedescendant",
+    "tabindex",
+    "biomejs",
+    "stylelint",
+    "srclang",
+    "playsinline"
+  ],
+  "cSpell.ignorePaths": [
+    "package.json",
+    "pnpm-lock.yaml"
+  ]
+}
